@@ -1,7 +1,7 @@
 "use strict";
 
 import React from 'react';
-import Hello from '../../src/components/addTodo.jsx';
+import Hello from '../../src/components/addTodo.js';
 import chai from 'chai';
 import spies  from 'chai-spies';
 import {shallow} from 'enzyme';

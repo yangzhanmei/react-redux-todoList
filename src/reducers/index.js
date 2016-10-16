@@ -5,9 +5,7 @@ const initStore = {
 };
 
 function _addTodo(state, action) {
-    state.todos.push(action.todo);
-    console.log(state);
-    return state;
+    return {todos: [...state.todos, action.todo]};
 }
 
 export default function (state = initStore, action) {
