@@ -1,20 +1,20 @@
 import actionTypes from '../actions/types';
 
 const initStore = {
-  fruit: ['Apples', 'Oranges']
+    todos: ['eat', 'sleep']
 };
 
-function _handleDelete(state, action) {
-  return Object.assign({}, state, {
-    fruit: state.fruit.filter(name => name !== action.fruitName)
-  });
+function _addTodo(state, action) {
+    state.todos.push(action.todo);
+    console.log(state);
+    return state;
 }
 
 export default function (state = initStore, action) {
-  switch (action.type) {
-    case actionTypes.DELETE_FRUIT:
-      return _handleDelete(state, action);
-    default:
-      return state;
-  }
+    switch (action.type) {
+        case actionTypes.ADD_TODO:
+            return _addTodo(state, action);
+        default:
+            return state;
+    }
 };
